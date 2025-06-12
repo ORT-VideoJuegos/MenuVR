@@ -10,9 +10,9 @@ public class SceneManagerVR : MonoBehaviour
     public GameObject optionsCanvas;
 
     // Inicia el juego cargando la escena de juego principal
-    public void StartGame(string sceneName)
+    public void StartGame()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("EjemploUI");
     }
 
     // Muestra el menú de opciones y oculta el menú principal
@@ -27,5 +27,11 @@ public class SceneManagerVR : MonoBehaviour
     {
         Debug.Log("La aplicación se cerró correctamente.");
         Application.Quit(); // esto sólo funciona cuando el juego es un .exe y no cuando se lo está probando desde Unity
+    }
+
+    public void BackToMainMenu()
+    {
+        optionsCanvas.SetActive(false);
+        MainMenuCanvas.SetActive(true);
     }
 }
